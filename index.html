@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Results summary component</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 0;
+        background-color: hsl(0, 0%, 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        max-width: 1440px;
+      }
+      section {
+      }
+      main {
+        border-radius: 50px;
+        display: flex; /* Using flexbox for layout */
+        flex-direction: row; /* Align children in a row */
+        justify-content: space-between; /* Space between the children */
+        max-width: 600px; /* Maximum width */
+        padding: 20px; /* Padding around the content */
+        box-sizing: border-box; /* Border box for proper padding and borders */
+      }
+      .page-type-summary,
+      .page-type-result {
+        border-radius: 20px;
+        flex: 1;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        color: white;
+        background-color: hsl(241, 81%, 54%);
+      }
+      .circle-container {
+        border: 2px solid hsl(234, 85%, 45%); /* Cobalt blue border */
+        background-color: darkblue;
+        border-radius: 50%; /* Makes the border rounded into a circle */
+        display: flex; /* Makes child elements (h1 and p) align inline */
+        flex-direction: column; /* Aligns child elements vertically */
+        justify-content: center; /* Center aligns vertically */
+        align-items: center; /* Center aligns horizontally */
+        padding: 20px; /* Adds space inside the circle */
+        width: 150px; /* Sets a fixed width, adjust as needed */
+        height: 150px; /* Sets a fixed height, adjust as needed */
+        margin: 0 auto; /* Centers the circle container horizontally */
+      }
+      .page-type-result h1 {
+        font-size: 70px;
+        margin: 0%;
+        gap: 0px;
+      }
+      .Result-digit {
+        margin: 0px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .page-type-summary {
+        background-color: white;
+        color: purple;
+      }
+      .page-type-summary .summary-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        color: blue;
+
+        text-align: left;
+        margin: 9px 0;
+
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .page-type-summary .summary-item svg {
+        margin-right: 10px;
+      }
+      .page-type-summary .summary-item .text .svg {
+        flex: 1;
+      }
+      .page-type-summary .summary-item .score {
+        margin-left: 10px;
+        font-weight: bold;
+
+        width: 70px; /* Fixed width for scores */
+        text-align: center; /* Align text to the right */
+      }
+      .page-type-summary button {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        border: 1px solid hsl(241, 81%, 54%);
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @media (min-width: 1440px) {
+        body {
+          font-size: 18px; /* Larger text on desktop */
+        }
+        main {
+          max-width: 1440px; /* Max width as per design spec */
+          padding: 40px; /* Larger padding for desktop */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <main>
+        <div class="page-type-result">
+          <h5>Your Result</h5>
+          <div class="circle-container">
+            <h1>76</h1>
+            <!-- This h1 will be inside the circle -->
+            <p class="Result-digit">of 100</p>
+            <!-- Assuming you changed h2 to p or want to include this p in the circle -->
+          </div>
+          <h2>Great</h2>
+          <p>
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+        <div class="page-type-summary">
+          <h4>Summary</h4>
+
+          <div class="summary-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="#F55"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.25"
+                d="M10.833 8.333V2.5l-6.666 9.167h5V17.5l6.666-9.167h-5Z"
+              />
+            </svg>
+            <span class="text">Reaction</span>
+            <span class="score">80 / 100</span>
+          </div>
+          <div class="summary-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="#FFB21E"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.25"
+                d="M5.833 11.667a2.5 2.5 0 1 0 .834 4.858"
+              />
+              <path
+                stroke="#FFB21E"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.25"
+                d="M3.553 13.004a3.333 3.333 0 0 1-.728-5.53m.025-.067a2.083 2.083 0 0 1 2.983-2.824m.199.054A2.083 2.083 0 1 1 10 3.75v12.917a1.667 1.667 0 0 1-3.333 0M10 5.833a2.5 2.5 0 0 0 2.5 2.5m1.667 3.334a2.5 2.5 0 1 1-.834 4.858"
+              />
+            </svg>
+            <span class="text">Memory</span>
+            <span class="score">92 / 100</span>
+          </div>
+          <div class="summary-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="#00BB8F"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.25"
+                d="M7.5 10h5M10 18.333A8.333 8.333 0 1 0 1.667 10c0 1.518.406 2.942 1.115 4.167l-.699 3.75 3.75-.699A8.295 8.295 0 0 0 10 18.333Z"
+              />
+            </svg>
+            <span class="text">Verbal</span>
+            <span class="score">61 / 100</span>
+          </div>
+          <div class="summary-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="#1125D6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.25"
+                d="M10 11.667a1.667 1.667 0 1 0 0-3.334 1.667 1.667 0 0 0 0 3.334Z"
+              />
+              <path
+                stroke="#1125D6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.25"
+                d="M17.5 10c-1.574 2.492-4.402 5-7.5 5s-5.926-2.508-7.5-5C4.416 7.632 6.66 5 10 5s5.584 2.632 7.5 5Z"
+              />
+            </svg>
+            <span class="text">Visual</span>
+            <span class="score">72 / 100</span>
+          </div>
+
+          <button type="button">Continue</button>
+        </div>
+      </main>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Samuel</a>.
+      </div>
+    </section>
+  </body>
+</html>
